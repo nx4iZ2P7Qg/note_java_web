@@ -12,6 +12,7 @@
 
     <modules>
         <module>web-eureka</module>
+        <module>web-gateway</module>
     </modules>
 
     <!-- spring boot -->
@@ -38,13 +39,16 @@
     <!-- spring boot -->
     <!-- Add typical dependencies for a web application -->
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!-- 放在root pom中，会影响gateway模块的启动，因为gateway使用了webflux，而不是mvc -->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-web</artifactId>-->
+        <!--</dependency>-->
     </dependencies>
 
     <!-- spring boot -->
+    <!-- 若有，maven package后的.jar可独立运行，.jar.original，与.jar比较，其中不包含依赖 -->
+    <!-- 若无，maven package后的.jar不包含依赖 -->
     <!-- Package as an executable jar -->
     <build>
         <plugins>
