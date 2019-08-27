@@ -39,8 +39,8 @@
     <!-- spring boot -->
     <!-- Add typical dependencies for a web application -->
     <dependencies>
+        <!-- 放在root pom中，会影响gateway模块的启动，因为gateway使用了webflux，而不是mvc -->
         <!--<dependency>-->
-            <!-- 放在root pom中，会影响gateway模块的启动，因为gateway使用了webflux，而不是mvc -->
             <!--<groupId>org.springframework.boot</groupId>-->
             <!--<artifactId>spring-boot-starter-web</artifactId>-->
         <!--</dependency>-->
