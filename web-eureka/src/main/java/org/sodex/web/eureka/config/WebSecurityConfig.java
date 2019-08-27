@@ -8,6 +8,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        // 关闭反csrf攻击，否则gateway无法正常注册
+        http.csrf().disable();
         // 开启eureka login页面
         super.configure(http);
     }
