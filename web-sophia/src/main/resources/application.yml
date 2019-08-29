@@ -1,7 +1,6 @@
 server:
   port: 9003
 
-# 日志
 logging.file: logs/sophia.log
 logging:
   file:

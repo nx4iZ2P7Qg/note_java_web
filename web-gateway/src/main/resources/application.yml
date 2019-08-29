@@ -1,7 +1,6 @@
 server:
   port: 9002
 
-# 日志
 logging.file: logs/gateway.log
 logging:
   file:
