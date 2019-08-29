@@ -26,3 +26,8 @@ eureka:
 #  server:
 #    waitTimeInMsWhenSyncEmpty: 0
 #    enableSelfPreservation: false
+
+logging.file: logs/eureka.log
+logging:
+  file:
+    max-history: 30

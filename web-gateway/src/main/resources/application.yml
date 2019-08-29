@@ -1,13 +1,12 @@
 server:
   port: 9002
+
 # 日志
+logging.file: logs/gateway.log
 logging:
-  level:
-    org.springframework.cloud.gateway: TRACE
-    org.springframework.http.server.reactive: DEBUG
-    org.springframework.web.reactive: DEBUG
-    reactor.ipc.netty: DEBUG
-  file: logs/gateway.log
+  file:
+    max-history: 30
+
 eureka:
   client:
     serviceUrl:
