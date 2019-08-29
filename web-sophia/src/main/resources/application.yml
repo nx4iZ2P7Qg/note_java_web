@@ -1,0 +1,20 @@
+server:
+  port: 9003
+
+# 日志
+logging.file: logs/sophia.log
+logging:
+  file:
+    max-history: 30
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:eureka123@localhost:9001/eureka/
+  instance:
+    prefer-ip-address: true
+    leaseRenewalIntervalInSeconds: 10
+
+spring:
+  application:
+    name: sophia

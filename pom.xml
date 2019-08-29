@@ -11,8 +11,10 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>web-common</module>
         <module>web-eureka</module>
         <module>web-gateway</module>
+        <module>web-sophia</module>
     </modules>
 
     <!-- spring boot -->
@@ -44,11 +46,27 @@
             <!--<groupId>org.springframework.boot</groupId>-->
             <!--<artifactId>spring-boot-starter-web</artifactId>-->
         <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+
+        <!-- development-time features -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- production ready features -->
+        <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
 
     <!-- spring boot -->
-    <!-- 若有，maven package后的.jar可独立运行，.jar.original，与.jar比较，其中不包含依赖 -->
-    <!-- 若无，maven package后的.jar不包含依赖 -->
+    <!-- maven package后的.jar重命名为.jar.original（其中不包含依赖），新生成.jar，可独立运行 -->
     <!-- Package as an executable jar -->
     <build>
         <plugins>
