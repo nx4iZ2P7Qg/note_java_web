@@ -1,1 +1,9 @@
 .idea
+logs
+iview-admin
+
+# 模块配置
+common.iml
+eureka.iml
+gateway.iml
+sophia.iml
