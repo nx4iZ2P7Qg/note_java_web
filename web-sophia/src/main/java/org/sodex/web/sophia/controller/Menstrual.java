@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-public class Menstrul {
+public class Menstrual {
     
     @PostMapping(value="/login")
     public String login() throws Exception{
