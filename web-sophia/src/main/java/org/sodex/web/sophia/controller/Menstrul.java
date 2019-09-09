@@ -12,11 +12,6 @@ import java.util.Map;
 @RestController
 public class Menstrul {
     
-    @GetMapping(value="/test")
-    public String getTest() {
-        return "hello webflex";
-    }
-    
     @PostMapping(value="/login")
     public String login() throws Exception{
         System.out.println("login");
