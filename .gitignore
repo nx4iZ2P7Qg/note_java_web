@@ -2,6 +2,8 @@
 logs
 iview-admin
 
+target
+
 # 模块配置
 root.iml
 common.iml

@@ -1,5 +1,5 @@
 server:
-  port: 9001
+  port: 331
 
 # 若不配置，启动日志中会出现No spring.application.name found, defaulting to 'application'
 spring:

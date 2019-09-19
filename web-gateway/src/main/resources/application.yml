@@ -1,5 +1,5 @@
 server:
-  port: 9002
+  port: 332
 
 logging.file: logs/gateway.log
 logging:
@@ -9,7 +9,7 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://admin:eureka123@localhost:9001/eureka/
+      defaultZone: http://admin:eureka123@localhost:331/eureka/
   instance:
     prefer-ip-address: true
     leaseRenewalIntervalInSeconds: 10
