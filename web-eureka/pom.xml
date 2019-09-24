@@ -6,20 +6,20 @@
     <groupId>org.sodex.web</groupId>
     <artifactId>eureka</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    
+
     <parent>
         <groupId>org.sodex</groupId>
         <artifactId>root</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    
+
     <dependencies>
         <!-- login页面依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-        
+
         <!-- eureka server 依赖 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
