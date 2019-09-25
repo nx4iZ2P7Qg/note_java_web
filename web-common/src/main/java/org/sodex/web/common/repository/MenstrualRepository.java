@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface MenstrualRepository extends JpaRepository<Menstrual, Long> {
 
     Page<Menstrual> findAll(Pageable pageable);
-    
+
 }

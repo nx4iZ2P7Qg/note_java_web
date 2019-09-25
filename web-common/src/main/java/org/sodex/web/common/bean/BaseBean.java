@@ -19,7 +19,7 @@ public class BaseBean {
 
     @Column
     private LocalDateTime createAt;
-    
+
     @Column
     private Long updateBy;
 

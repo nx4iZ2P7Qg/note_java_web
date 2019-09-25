@@ -17,7 +17,7 @@ eureka:
 spring:
   application:
     name: sophia
-    
+
   datasource:
     url: jdbc:postgresql://localhost:5432/df
     username: postgres
