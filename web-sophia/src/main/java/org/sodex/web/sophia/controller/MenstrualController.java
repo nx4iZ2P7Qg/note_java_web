@@ -1,9 +1,11 @@
 package org.sodex.web.sophia.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.sodex.web.common.vo.MessageIdVo;
+import org.sodex.web.common.bean.vo.MessageIdVo;
+import org.sodex.web.sophia.service.TestService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +13,10 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-public class Menstrual {
+public class MenstrualController {
+
+    @Resource
+    TestService testService;
 
     @PostMapping(value = "/user/login")
     public String login() throws Exception {
@@ -58,7 +63,7 @@ public class Menstrual {
         unread.put("msg_id", 61);
         unreadList.add(unread);
         reMap.put("unread", unreadList);
-        
+
         List<Map> readList = new ArrayList<>();
         Map<String, Object> read = new HashMap<>();
         read.put("title", "已读消息");
@@ -71,7 +76,7 @@ public class Menstrual {
         read2.put("create_time", "2018-07-01");
         read2.put("msg_id", 72);
         readList.add(read2);
-        
+
         List<Map> trashList = new ArrayList<>();
         Map<String, Object> trash = new HashMap<>();
         trash.put("title", "辣鸡消息");
@@ -81,7 +86,7 @@ public class Menstrual {
         reMap.put("trash", trashList);
         return mapper.writeValueAsString(reMap);
     }
-    
+
     @GetMapping(value = "/user/message/content")
     public String messageContent(@RequestParam("msg_id") Long msgId) throws Exception {
         System.out.println("messageContent-msgId = " + msgId);
@@ -105,5 +110,11 @@ public class Menstrual {
     public boolean messageRestore(@RequestBody MessageIdVo vo) throws Exception {
         System.out.println("messageRestore-vo = " + new ObjectMapper().writeValueAsString(vo));
         return true;
+    }
+
+    @PostMapping(value = "/test/test")
+    public void test(@RequestBody Object object) throws Exception {
+        System.out.println("enter into test");
+        testService.test(object);
     }
 }

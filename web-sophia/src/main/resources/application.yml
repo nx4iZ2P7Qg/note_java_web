@@ -17,3 +17,20 @@ eureka:
 spring:
   application:
     name: sophia
+    
+  datasource:
+    url: jdbc:postgresql://localhost:5432/df
+    username: postgres
+    password: 123456
+
+  jpa:
+    properties:
+      hibernate:
+        # 关闭hibernate的检查，避免启动时错误提示
+        # Disabling contextual LOB creation as createClob() method threw error
+        temp:
+          use_jdbc_metadata_defaults: false
+
+        # 启动时生成或者更新表
+        hbm2ddl:
+          auto: update

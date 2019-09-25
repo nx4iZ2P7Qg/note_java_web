@@ -1,7 +1,7 @@
-package org.sodex.web.common.vo;
+package org.sodex.web.common.bean.vo;
 
 public class MessageIdVo {
-    
+
     private Long msgId;
 
     public Long getMsgId() {
