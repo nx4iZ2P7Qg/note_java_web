@@ -1,5 +1,10 @@
 package org.sodex.web.common.bean;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.sodex.web.common.util.LocalDateTimeDeserializer;
+import org.sodex.web.common.util.LocalDateTimeSerializer;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -18,12 +23,16 @@ public class BaseBean {
     private Long createBy;
 
     @Column
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
     private LocalDateTime createAt;
 
     @Column
     private Long updateBy;
 
     @Column
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
     private LocalDateTime updateAt;
 
     public Long getId() {
