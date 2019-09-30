@@ -5,6 +5,8 @@ logging.file: logs/gateway.log
 logging:
   file:
     max-history: 30
+  level:
+    org.sodex.web: debug
 
 eureka:
   client:

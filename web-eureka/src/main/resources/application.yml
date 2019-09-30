@@ -1,6 +1,13 @@
 server:
   port: 331
 
+logging.file: logs/eureka.log
+logging:
+  file:
+    max-history: 30
+  level:
+    org.sodex.web: debug
+
 # 若不配置，启动日志中会出现No spring.application.name found, defaulting to 'application'
 spring:
   application:
@@ -26,8 +33,3 @@ eureka:
 #  server:
 #    waitTimeInMsWhenSyncEmpty: 0
 #    enableSelfPreservation: false
-
-logging.file: logs/eureka.log
-logging:
-  file:
-    max-history: 30
