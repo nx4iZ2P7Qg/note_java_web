@@ -1,4 +1,4 @@
-package org.sodex.web.sophia.service.imp;
+package org.sodex.web.queen.service.imp;
 
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.slf4j.Logger;
@@ -6,7 +6,9 @@ import org.slf4j.LoggerFactory;
 import org.sodex.web.common.bean.Menstrual;
 import org.sodex.web.common.repository.MenstrualRepository;
 import org.sodex.web.common.util.Json;
-import org.sodex.web.sophia.service.MenstrualService;
+import org.sodex.web.queen.service.MenstrualService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -67,6 +69,14 @@ public class MenstrualServiceImp implements MenstrualService {
         reMap.put("next", next);
         logger.debug("glance-reMap = {}", reMap);
         return Json.MAPPER.write(reMap);
+    }
+
+    @Override
+    public String tableDetail(Integer pageNumber, Integer pageSize) throws Exception {
+        Sort sort = new Sort(Sort.Direction.DESC, "id");
+        Page<Menstrual> menstrualList = menstrualRepository.findAll(PageRequest.of(pageNumber, pageSize, sort));
+        logger.debug("tableDetail-menstrualList = {}", Json.MAPPER.write(menstrualList));
+        return Json.MAPPER.write(menstrualList);
     }
 
     private void test() throws Exception {

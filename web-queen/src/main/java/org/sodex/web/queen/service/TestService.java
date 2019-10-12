@@ -1,4 +1,4 @@
-package org.sodex.web.sophia.service;
+package org.sodex.web.queen.service;
 
 public interface TestService {
 

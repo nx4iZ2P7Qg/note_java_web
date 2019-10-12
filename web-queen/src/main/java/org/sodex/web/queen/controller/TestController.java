@@ -1,8 +1,8 @@
-package org.sodex.web.sophia.controller;
+package org.sodex.web.queen.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.sodex.web.common.bean.vo.MessageIdVo;
-import org.sodex.web.sophia.service.TestService;
+import org.sodex.web.queen.service.TestService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

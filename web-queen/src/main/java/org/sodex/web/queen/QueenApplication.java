@@ -1,4 +1,4 @@
-package org.sodex.web.sophia;
+package org.sodex.web.queen;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,10 +8,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "org.sodex.web.common.repository")
 @EntityScan(basePackages = "org.sodex.web.common.bean")
-public class SophiaApplication {
+public class QueenApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SophiaApplication.class, args);
+        SpringApplication.run(QueenApplication.class, args);
     }
 
 }

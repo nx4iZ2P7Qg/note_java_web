@@ -14,7 +14,7 @@
         <module>web-common</module>
         <module>web-eureka</module>
         <module>web-gateway</module>
-        <module>web-sophia</module>
+        <module>web-queen</module>
     </modules>
 
     <!-- spring boot -->

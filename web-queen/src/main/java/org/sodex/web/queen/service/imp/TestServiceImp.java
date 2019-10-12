@@ -1,7 +1,7 @@
-package org.sodex.web.sophia.service.imp;
+package org.sodex.web.queen.service.imp;
 
 import org.sodex.web.common.repository.TestRepository;
-import org.sodex.web.sophia.service.TestService;
+import org.sodex.web.queen.service.TestService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

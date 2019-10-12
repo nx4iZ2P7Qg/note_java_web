@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>org.sodex.web</groupId>
-    <artifactId>sophia</artifactId>
+    <artifactId>queen</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
