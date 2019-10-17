@@ -17,7 +17,7 @@ eureka:
     leaseRenewalIntervalInSeconds: 10
 
 # gateway actuator 提供了关于Filter及routes的信息
-# 访问http://localhost:9002/actuator/gateway/routes可以查看
+# 访问http://localhost:{{server.port}}/actuator/gateway/routes可以查看
 management:
   endpoints:
     web:
@@ -71,82 +71,20 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true
+          enabled: true # 是否与服务发现组件进行结合，通过serviceId转发到具体服务
+          lower-case-service-id: true # 当注册中心为eureka时，使用小写的serviceId进行转发
       # 路由信息
-      routes:
-      - id: jd_route
-        uri: http://jd.com
-        predicates:
-        - Path=/jd
-                #      - id: userService
-                #        uri: lb://userService
-                #        predicates:
-                #        - Path=/userService/**
-                #        filters:
-                #            - name: Hystrix
-                #              args:
-                #                name: fallbackcmd
-                #                fallbackUri: forward:/fallback
-                #                
-                #      - id: deviceService
-                #        uri: lb://deviceService
-                #        predicates:
-                #        - Path=/deviceService/**
-                #        filters:
-                #            - name: Hystrix
-                #              args:
-                #                name: fallbackcmd
-                #                fallbackUri: forward:/fallback
-                #                
-                #      - id: acs-agent-service
-                #        uri: lb://acs-agent-service
-                #        predicates:
-                #        - Path=/acs-agent-service/**
-                #        filters:
-                #            - name: Hystrix
-                #              args:
-                #                name: fallbackcmd
-                #                fallbackUri: forward:/fallback
-                #                
-                #      - id: netconfService
-                #        uri: lb://netconfService
-                #        predicates: 
-                #         - Path=/netconfService/**
-                #        filters:
-                #            - name: Hystrix
-                #              args:
-                #                 name: fallbackcmd
-                #                 fallbackUri: forward:/fallback
-                #
-                #      - id: firmwareService
-                #        uri: lb://firmwareService
-                #        predicates:
-                #        - Path=/firmwareService/**
-                #        filters:
-                #            - name: Hystrix
-                #              args:
-                #                name: fallbackcmd
-                #                fallbackUri: forward:/fallback
-                #                
-                #      - id: pmService
-                #        uri: lb://pmService
-                #        predicates:
-                #        - Path=/pmService/**
-                #        filters:
-                #            - name: Hystrix
-                #              args:
-                #                name: fallbackcmd
-                #                fallbackUri: forward:/fallback
-                #                
-                #      - id: logService
-                #        uri: lb://logService
-                #        predicates:
-                #          - Path=/logService/**
-                #        filters:
-                #          - name: Hystrix
-                #            args:
-                #              name: fallbackcmd
-                #              fallbackUri: forward:/fallback
+#      routes:
+#      - id: queen
+#        uri: lb://queen
+#        predicates:
+#        - Path=/queen/**
+          
+#        filters:
+#            - name: Hystrix
+#              args:
+#                name: fallbackcmd
+#                fallbackUri: forward:/fallback
 
       #不进行token拦截
       #auth:
