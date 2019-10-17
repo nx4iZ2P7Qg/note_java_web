@@ -4,6 +4,7 @@ import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.sodex.web.common.bean.Menstrual;
+import org.sodex.web.common.bean.PageVo;
 import org.sodex.web.common.repository.MenstrualRepository;
 import org.sodex.web.common.util.Json;
 import org.sodex.web.queen.service.MenstrualService;
@@ -72,9 +73,10 @@ public class MenstrualServiceImp implements MenstrualService {
     }
 
     @Override
-    public String tableDetail(Integer pageNumber, Integer pageSize) throws Exception {
+    public String tableDetail(PageVo pageVo) throws Exception {
         Sort sort = new Sort(Sort.Direction.DESC, "id");
-        Page<Menstrual> menstrualList = menstrualRepository.findAll(PageRequest.of(pageNumber, pageSize, sort));
+        Page<Menstrual> menstrualList = menstrualRepository
+                .findAll(PageRequest.of(pageVo.getNumber(), pageVo.getSize(), sort));
         logger.debug("tableDetail-menstrualList = {}", Json.MAPPER.write(menstrualList));
         return Json.MAPPER.write(menstrualList);
     }
