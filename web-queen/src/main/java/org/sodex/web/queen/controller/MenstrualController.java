@@ -13,13 +13,13 @@ public class MenstrualController {
     @Resource
     MenstrualService menstrualService;
 
-    @GetMapping(value = "/menstrual/v1/glance")
+    @GetMapping(value = "/menstrual/glance", headers = "X-API-VERSION=1")
     public String glance() throws Exception {
         // todo df 添加gateway拦截器，这样就不用每个方法都写enter into
         return menstrualService.glance();
     }
 
-    @GetMapping(value = "/menstrual/v1/records")
+    @GetMapping(value = "/menstrual/records", headers = "X-API-VERSION=1")
     public String tableDetail(PageVo pageVo) throws Exception {
         return menstrualService.tableDetail(pageVo);
     }
