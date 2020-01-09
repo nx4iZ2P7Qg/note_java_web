@@ -6,6 +6,6 @@ public interface MenstrualService {
 
     String glance() throws Exception;
 
-    String tableDetail(PageVo pageVo) throws Exception;
+    String getMenstruals(PageVo pageVo) throws Exception;
 
 }

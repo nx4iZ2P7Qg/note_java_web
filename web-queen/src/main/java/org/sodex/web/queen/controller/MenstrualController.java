@@ -19,8 +19,9 @@ public class MenstrualController {
         return menstrualService.glance();
     }
 
-    @GetMapping(value = "/menstrual/records", headers = "X-API-VERSION=1")
-    public String tableDetail(PageVo pageVo) throws Exception {
-        return menstrualService.tableDetail(pageVo);
+    @GetMapping(value = "/menstruals", headers = "X-API-VERSION=1")
+    public String getMenstruals(PageVo pageVo) throws Exception {
+        return menstrualService.getMenstruals(pageVo);
     }
+
 }

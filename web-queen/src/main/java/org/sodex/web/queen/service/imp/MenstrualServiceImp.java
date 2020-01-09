@@ -73,7 +73,7 @@ public class MenstrualServiceImp implements MenstrualService {
     }
 
     @Override
-    public String tableDetail(PageVo pageVo) throws Exception {
+    public String getMenstruals(PageVo pageVo) throws Exception {
         Sort sort = new Sort(Sort.Direction.DESC, "id");
         Page<Menstrual> menstrualList = menstrualRepository
                 .findAll(PageRequest.of(pageVo.getNumber(), pageVo.getSize(), sort));
